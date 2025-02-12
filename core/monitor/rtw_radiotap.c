@@ -283,16 +283,16 @@ sint rtw_fill_radiotap_hdr(_adapter *padapter, struct rx_pkt_attrib *a, u8 *buf)
 	}
 
 	/* dBm Antenna Signal */
-	rtap_hdr->it_present |= BIT(IEEE80211_RADIOTAP_DBM_ANTSIGNAL);
+	/*rtap_hdr->it_present |= BIT(IEEE80211_RADIOTAP_DBM_ANTSIGNAL);
 	hdr_buf[rt_len] = a->phy_info.recv_signal_power;
-	rt_len += 1;
+	rt_len += 1;*/
 
-#if 1
-	/* dBm Antenna Noise */
-	rtap_hdr->it_present |= BIT(IEEE80211_RADIOTAP_DBM_ANTNOISE);
-	hdr_buf[rt_len] = 0;
-	rt_len += 1;
-#endif
+//#if 0
+  /* dBm Antenna Noise */
+  //rtap_hdr->it_present |= BIT(IEEE80211_RADIOTAP_DBM_ANTNOISE);
+  //hdr_buf[rt_len] = a->phy_info.recv_signal_power;
+  //rt_len += 1;
+//#endif
 #if 1
 	/* Signal Quality, Required Alignment: 2 bytes */
 	rtap_hdr->it_present |= BIT(IEEE80211_RADIOTAP_LOCK_QUALITY);
