@@ -4828,7 +4828,7 @@ s32 pre_recv_entry(union recv_frame *precvframe, u8 *pphy_status)
 
 			/* Parse QoS/TID if present (QoS data subtype
 			 * has BIT(7)|BIT(3) set in frame control) */
-			if ((GetFrameSubType(pbuf) & WIFI_QOS_DATA_TYPE)
+			if ((get_frame_sub_type(pbuf) & WIFI_QOS_DATA_TYPE)
 			    == WIFI_QOS_DATA_TYPE) {
 				u8 a4_shift = (to_fr_ds == 3) ?
 					      ETH_ALEN : 0;
